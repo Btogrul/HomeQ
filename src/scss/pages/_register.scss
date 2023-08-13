@@ -1,0 +1,225 @@
+#registr-title{
+    padding: 56px 0;
+    background-color: $bgColor;
+    .title-inner{
+        width: 50%;
+        padding: 5px 0;
+        h2{
+            color: $primaryColor;
+            font-size: 38px;
+            font-weight: 400;
+            text-transform: capitalize;
+            padding: 13px 0;
+        }
+        ul{
+            @include flex-all;
+            padding: 0 3px ;
+            margin-top: 38px;
+            li{
+
+                font-size: 16px;
+                font-weight: 600;
+                padding: 0 3px;
+                a{
+                    color: $primaryColor;
+                }
+                &:first-child{
+                    &::after{
+                        content: "/";
+                        margin-left: 3px;
+                        color: $secondaryColor;
+                    }
+                }
+                &.selected{
+                    a{
+                        font-weight: 400;
+                        color: $secondaryColor;
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+// register title end=========
+
+
+// register form start 
+#register-form{
+    margin-top: 56px;
+    .register-inner{
+        @include flex-all($f-d:column,$f-j:center);
+        h2{
+            color: $primaryColor;
+            text-align: center;
+            font-size: 38px;
+            font-weight: 400;
+            line-height: 40px;
+            padding: 0 71px;
+        }
+        p{
+            color: $secondaryColor;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            margin: 24px;
+            &:last-child{
+                margin-top: 24px;
+            }
+        }
+        form{
+            @include flex-all($f-d:column,$f-j:center);
+            input{
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-radius: 4px;
+                height: 50px;
+                margin: 8px 0;
+                padding: 0 10px;
+                &::placeholder{
+                    text-transform: capitalize;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: $secondaryColor;
+                    padding: 16px 18px;
+                }
+            }
+            input[type="submit"]{
+                background-color: $btnBgColor;
+                color: #ffffff;
+                text-transform: capitalize;
+                cursor: pointer;
+            }
+            .checkBox{
+                margin-top: 27px;
+                @include flex-all ($f-j:center);
+                #check{
+                    border-color: $primaryColor;
+                    color: $btnBgColor;
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 12px;
+                    cursor: pointer;
+                    &:checked{
+                        border-color: $primaryColor;
+                        color: $btnBgColor;
+                    }
+                    &:hover{
+                        border-color: $primaryColor;
+                        color: $btnBgColor;
+                        background-color: black;
+                    }
+                    
+                    
+                }
+                label{
+                    color: $secondaryColor;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    user-select: none;
+                }
+
+            }
+        }
+    }
+}
+
+// register form end
+
+
+// dreamHome start ======================
+
+#dreamHome{
+    margin-top: 83px;
+    .dream-home-content{
+        background-color: $btnBgColor;
+        padding: 0 33px;
+        @include flex-all($f-j:space-between, $f-a:center,$f-w:wrap);
+        .home-img{
+            img{
+                @include img-size($obj:contain);
+            }
+        }
+        .home-desc{
+            
+            h3{
+                position: relative;
+                color: #FFF;
+                font-size: 38px;
+                font-weight: 400;
+                .home-svg{
+                    position: absolute;
+                    right: 45px;
+                    top: 21px;
+                }
+            }
+            p{
+                color: #FFF;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 24px;
+                margin-top: 18px;
+            }
+        }
+        .home-btn{
+            margin-right: 14px;
+            a{
+                color: #ffffff;
+                background-color: $primaryBtnColor;
+                padding: 16px 40px;
+                border-radius: 2px;
+            }
+        }
+
+        @media (max-width: 1100px){
+            @include flex-all($f-d:column);
+            padding: 45px 29px;
+            text-align: center;
+            // .home-img{
+            //     display: none;
+            // }
+            .home-desc{
+                padding: 10px 0;
+                p{
+                  padding: 15px 0;
+                }
+            }
+        }
+
+        @media (max-width: 573px){
+            position: relative;
+            .home-img {
+                display: none;
+            }
+            .home-desc{
+                h3{
+                    position: static;
+                    .home-svg{
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 428px){
+            position: relative;
+            .home-desc{
+                h3{
+                    position: static;
+                    .home-svg{
+                        top: 50%;
+                        left: 43%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// dreamHome endddddddddd
